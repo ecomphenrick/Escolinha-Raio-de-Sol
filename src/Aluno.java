@@ -1,9 +1,9 @@
 import java.util.List;
 
-public class Aluno {
+public class Aluno extends Pessoa{
     private String naturalidade;
-    private String responsável;
-    private String Turma;
+    private Responsavel responsavel;
+    private Turma turma;
     private List<Boletim> Boletim;
 
 }
