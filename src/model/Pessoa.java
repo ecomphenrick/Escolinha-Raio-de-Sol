@@ -5,20 +5,35 @@ public class Pessoa {
     protected String dataNascimento;
     protected Endereco endereco;
 
-    public Pessoa (String nome){
+    public Pessoa (String nome, String dataNascimento, Endereco endereco){
         this.nome = nome;
-
+        this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
     }
 
-    public String getNome()
-    {
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome)
-    {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 }
 
-//Classe Pessoa feita, com os getter e setter do nome pessoa, implementar o restante.
+
