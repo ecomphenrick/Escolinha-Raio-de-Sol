@@ -58,4 +58,3 @@ public class Turma {
     }
 }
 
-//Classe turma, organizaar construtor e getter e setter.
