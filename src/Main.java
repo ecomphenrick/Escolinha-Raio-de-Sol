@@ -1,13 +1,10 @@
-package view;
-
 import controller.Cadastro;
-import controller.Escola;
+import model.Escola;
 import model.Aluno;
-import model.Pessoa;
 
+import java.util.List;
 import java.util.Scanner;
 
-//Classe main com teste do get e set da classe pessoa usando atributo nome, funcionando normal.
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

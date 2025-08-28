@@ -1,8 +1,4 @@
-package controller;
-
-import model.Aluno;
-import model.Professor;
-import model.Turma;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;

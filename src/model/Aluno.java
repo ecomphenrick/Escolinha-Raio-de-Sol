@@ -7,23 +7,13 @@ public class Aluno extends Pessoa {
     private String naturalidade;
     private Responsavel responsavel;
     private Turma turma;
-    private List<Boletim> boletim;
 
     // Construtor
-    public Aluno(String nome, String dataNascimento, Endereco endereco, String naturalidade, Responsavel responsavel, Turma turma, List<Boletim> boletim) {
+    public Aluno(String nome, String dataNascimento, Endereco endereco, String naturalidade, Responsavel responsavel, Turma turma) {
         super(nome, dataNascimento, endereco);
         this.naturalidade = naturalidade;
         this.responsavel = responsavel;
         this.turma = turma;
-        this.boletim = boletim;
-    }
-
-    public List<Boletim> getBoletim() {
-        return boletim;
-    }
-
-    public void setBoletim(List<Boletim> boletim) {
-        this.boletim = boletim;
     }
 
     public String getNaturalidade() {

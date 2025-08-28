@@ -7,14 +7,12 @@ public class Turma {
     private String anoLetivo;
     private String professor;
     private List<Aluno> alunos;
-    private List<Boletim> boletins;
 
-    public Turma (String serie, String anoLetivo, String professor, List<Aluno> alunos, List<Boletim> boletins){
+    public Turma (String serie, String anoLetivo, String professor, List<Aluno> alunos){
         this.serie = serie;
         this.anoLetivo = anoLetivo;
         this.professor = professor;
         this.alunos = alunos;
-        this.boletins = boletins;
     }
 
     public List<Aluno> getAlunos() {
@@ -33,13 +31,6 @@ public class Turma {
         this.anoLetivo = anoLetivo;
     }
 
-    public List<Boletim> getBoletins() {
-        return boletins;
-    }
-
-    public void setBoletins(List<Boletim> boletins) {
-        this.boletins = boletins;
-    }
 
     public String getProfessor() {
         return professor;

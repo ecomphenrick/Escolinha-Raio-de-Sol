@@ -47,11 +47,10 @@ public class Cadastro {
         System.out.println("Telefone: ");
         String telefone = sc.nextLine();
         List<Aluno> dependentes = new ArrayList<>();
-        List<Boletim> boletim = new ArrayList<>();
 
         Responsavel responsavel = new Responsavel(nomeResp, dataResp, endereco, telefone, dependentes );
 
-        Aluno aluno = new Aluno(nomeAluno, dataNascimentoAluno, endereco, naturalidade, responsavel, turma, boletim);
+        Aluno aluno = new Aluno(nomeAluno, dataNascimentoAluno, endereco, naturalidade, responsavel, turma );
 
         dependentes.add(aluno);
         turma.getAlunos().add(aluno);
@@ -70,10 +69,9 @@ public class Cadastro {
         System.out.println("Digite o professor: ");
         String professor = sc.nextLine();
         List<Aluno> alunos = new ArrayList<>();
-        List<Boletim> boletins = new ArrayList<>();
 
 
-        Turma turma = new Turma(serie, anoLetivo, professor, alunos, boletins);
+        Turma turma = new Turma(serie, anoLetivo, professor, alunos);
 
         escola.getTurmas().add(turma);
 
@@ -116,6 +114,7 @@ public class Cadastro {
 
 
         Professor professor = new Professor(nome, dataNascimento, endereco, formacao, turma, telefone, dependentes);
+        escola.getProfessores().add(professor);
 
     }
 }
