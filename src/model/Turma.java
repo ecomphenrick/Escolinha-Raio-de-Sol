@@ -5,11 +5,11 @@ import java.util.List;
 public class Turma {
     private String serie;
     private String anoLetivo;
-    private Professor professor;
+    private String professor;
     private List<Aluno> alunos;
     private List<Boletim> boletins;
 
-    public Turma (String serie, String anoLetivo, Professor professor, List<Aluno> alunos, List<Boletim> boletins){
+    public Turma (String serie, String anoLetivo, String professor, List<Aluno> alunos, List<Boletim> boletins){
         this.serie = serie;
         this.anoLetivo = anoLetivo;
         this.professor = professor;
@@ -41,11 +41,11 @@ public class Turma {
         this.boletins = boletins;
     }
 
-    public Professor getProfessor() {
+    public String getProfessor() {
         return professor;
     }
 
-    public void setProfessor(Professor professor) {
+    public void setProfessor(String professor) {
         this.professor = professor;
     }
 

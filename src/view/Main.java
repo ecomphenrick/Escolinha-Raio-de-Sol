@@ -1,6 +1,7 @@
 package view;
 
 import controller.Cadastro;
+import controller.Escola;
 import model.Aluno;
 import model.Pessoa;
 
@@ -10,6 +11,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Escola escola = new Escola();
         System.out.println("Escolinha Raio de Sol!");
         int acao;
         do{
@@ -28,14 +30,27 @@ public class Main {
                         System.out.println("Digite a opção desejada: ");
                         System.out.println("1 - Cadastrar Aluno");
                         System.out.println("2 - Cadastrar Professor");
-                        System.out.println("3 - Cadastrar Professor");
+                        System.out.println("3 - Cadastrar Turma");
                         System.out.println("4 - Não cadastrar Ninguém");
                         acaoCadastro = sc.nextInt();
                         switch (acaoCadastro){
                             case 1:
-                                Cadastro cadastro = new Cadastro();
-                                cadastro.CadastroAluno();
+                                if(escola.getTurmas() == null || escola.getTurmas().isEmpty())
+                                {
+                                    System.out.println("Nenhuma turma está cadastrada.");
+                                    System.out.println(("Cadastre uma turma antes."));
 
+                                }else {
+                                    Cadastro cadastroAluno = new Cadastro();
+                                    cadastroAluno.CadastroAluno(escola);
+                                }
+                                break;
+                            case 2:
+                                Cadastro cadastroProfessor = new Cadastro();
+                                cadastroProfessor.CadastroProfessor(escola);
+                            case 3:
+                                Cadastro cadastroTurma = new Cadastro();
+                                cadastroTurma.CadastroTurma(escola);
                         }
 
 
