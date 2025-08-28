@@ -6,11 +6,11 @@ import java.util.List;
 public class Aluno extends Pessoa {
     private String naturalidade;
     private Responsavel responsavel;
-    private Turma turma;
+    private String turma;
     private List<Boletim> boletim;
 
     // Construtor
-    public Aluno(String nome, String dataNascimento, Endereco endereco, String naturalidade, Responsavel responsavel, Turma turma, List<Boletim> boletim) {
+    public Aluno(String nome, String dataNascimento, Endereco endereco, String naturalidade, Responsavel responsavel, String turma, List<Boletim> boletim) {
         super(nome, dataNascimento, endereco);
         this.naturalidade = naturalidade;
         this.responsavel = responsavel;
@@ -42,11 +42,11 @@ public class Aluno extends Pessoa {
         this.responsavel = responsavel;
     }
 
-    public Turma getTurma() {
+    public String getTurma() {
         return turma;
     }
 
-    public void setTurma(Turma turma) {
+    public void setTurma(String turma) {
         this.turma = turma;
     }
 }

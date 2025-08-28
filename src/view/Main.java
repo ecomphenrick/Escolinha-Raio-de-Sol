@@ -22,14 +22,24 @@ public class Main {
 
             switch (acao){
                 case 1:
-                    System.out.println("Cadastro");
-                    Cadastro cadastro = new Cadastro();
-                    Aluno aluno = cadastro.criarAluno();
-                    System.out.println("Aluno cadastrado com sucesso!");
-                    System.out.println("Nome: " + aluno.getNome());
-                    System.out.println("Data de Nascimento: " + aluno.getDataNascimento());
-                    System.out.println("Naturalidade: " + aluno.getNaturalidade());
-                    System.out.println("Responsável: " + aluno.getResponsavel().getNome());
+                    int acaoCadastro;
+                    System.out.println("Cadastro: ");
+                    do{
+                        System.out.println("Digite a opção desejada: ");
+                        System.out.println("1 - Cadastrar Aluno");
+                        System.out.println("2 - Cadastrar Professor");
+                        System.out.println("3 - Cadastrar Professor");
+                        System.out.println("4 - Não cadastrar Ninguém");
+                        acaoCadastro = sc.nextInt();
+                        switch (acaoCadastro){
+                            case 1:
+                                Cadastro cadastro = new Cadastro();
+                                cadastro.CadastroAluno();
+
+                        }
+
+
+                    }while(acaoCadastro!=4);
                     break;
                 case 2:
                     System.out.println("Busca");
