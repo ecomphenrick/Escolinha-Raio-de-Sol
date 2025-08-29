@@ -43,6 +43,8 @@ public class Main {
 
         } while (acao != 3);
         List<Professor> professores = escola.getProfessores();
+
+        //Testes para saber se os objetos estavam sendo adicionados nas listas.
         if(professores != null && !professores.isEmpty()) {
             for(Professor prof : professores) {  // for-each
                 System.out.println("Nome: " + prof.getNome());
@@ -87,9 +89,6 @@ public class Main {
         } else {
             System.out.println("Nenhuma turma cadastrada.");
         }
-
-
-
 
     }
 

@@ -4,11 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Escola {
-    private List<Turma> turmas;
-    private List<Professor> professores;
-    private List<Aluno> alunos;
-    private List<Professor> professoresSemTurma = new ArrayList<>();
+    private List<Turma> turmas; //Lista de Turmas
+    private List<Professor> professores; //Lista de Professores
+    private List<Aluno> alunos; //Lista de alunos
+    private List<Professor> professoresSemTurma = new ArrayList<>(); //Lista de Professores que não tem turma.
 
+    //Método que adiciona o professor que ta sem turma.
+    public void adicionarProfessorSemTurma(Professor professor) {
+        this.professoresSemTurma.add(professor);
+    }
+
+    //getters e setters.
     public List<Professor> getProfessoresSemTurma() {
         return professoresSemTurma;
     }
@@ -17,9 +23,6 @@ public class Escola {
         this.professoresSemTurma = professoresSemTurma;
     }
 
-    public void adicionarProfessorSemTurma(Professor professor) {
-        this.professoresSemTurma.add(professor);
-    }
 
     public List<Aluno> getAlunos() {
         return alunos;

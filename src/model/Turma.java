@@ -7,13 +7,14 @@ public class Turma {
     private String anoLetivo;
     private Professor professor;
     private List<Aluno> alunos;
-    //Construtor da classe, (Professor está como String, ver como ligar)
+    //Construtor da classe
     public Turma (String serie, String anoLetivo, Professor professor, List<Aluno> alunos){
         this.serie = serie;
         this.anoLetivo = anoLetivo;
         this.professor = professor;
         this.alunos = alunos;
     }
+    //Getters e Setters
 
     public List<Aluno> getAlunos() {
         return alunos;

@@ -8,10 +8,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class MenuCadastro {
+    //Criando Objetos
     Scanner sc = new Scanner(System.in);
     Cadastro cadastro = new Cadastro();
 
 
+    //Exibição do menu de cadastro com as chamadas de métodos.
     public void ExibirMenu(Escola escola) {
         int acaoCadastro;
         List<Turma> turmas = escola.getTurmas();
@@ -28,7 +30,7 @@ public class MenuCadastro {
             switch (acaoCadastro) {
                 case 0:
 
-                    if (escola.getTurmas() == null || escola.getTurmas().isEmpty()) {
+                    if (escola.getTurmas() == null || escola.getTurmas().isEmpty()) { //Verifica se existem turmas cadastradas.
                         System.out.println("Não há turmas cadastradas, cadastre uma antes.");
                     } else {
                         System.out.println("Cadastrando Aluno.");
