@@ -6,10 +6,20 @@ import java.util.List;
 public class Escola {
     private List<Turma> turmas;
     private List<Professor> professores;
+    private List<Aluno> alunos;
+
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
+    }
 
     public Escola(){
         this.turmas = new ArrayList<>();
         this.professores = new ArrayList<>();
+        this.alunos = new ArrayList<>();
     }
 
     public List<Professor> getProfessores() {
