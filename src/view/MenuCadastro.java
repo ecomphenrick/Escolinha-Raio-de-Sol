@@ -21,7 +21,7 @@ public class MenuCadastro {
             System.out.println("0 - Cadastrar Aluno");
             System.out.println("1 - Cadastrar Professor");
             System.out.println("2 - Cadastrar Turma");
-            System.out.println("3 - Não cadastrar Ninguém");
+            System.out.println("3 - Sair");
             acaoCadastro = sc.nextInt();
             sc.nextLine();
 
@@ -96,18 +96,31 @@ public class MenuCadastro {
                     Endereco endereco = new Endereco(rua, bairro, cep, cidade, estado);
                     System.out.println("Formação: ");
                     String formacao = sc.nextLine();
-                    System.out.println("Qual Turma? ");
-                    for (int i = 0; i < turmas.size(); i++) {
-                        Turma t = turmas.get(i);
-                        System.out.println(i + " - " + t.getSerie() + " - " + t.getAnoLetivo());
-                    }
-                    int escolha = sc.nextInt();
-                    Turma turma = turmas.get(escolha);
                     System.out.println("Telefone: ");
                     String telefone = sc.nextLine();
                     List<Aluno> dependentes = new ArrayList<>();
 
-                    cadastro.CadastroProfessor(escola, nome, dataNascimento, endereco, formacao,turma,telefone,dependentes);
+                    Professor novoProfessor;
+
+
+                    if(escola.getTurmas()==null || escola.getTurmas().isEmpty()){
+                        novoProfessor = cadastro.CadastroProfessor(escola, nome, dataNascimento, endereco, formacao,null,telefone,dependentes);
+                        escola.adicionarProfessorSemTurma(novoProfessor);
+                        System.out.println("Professor sem turma");
+                    }else{
+                        System.out.println("Qual Turma? ");
+
+                        for (int i = 0; i < turmas.size(); i++) {
+                            Turma t = turmas.get(i);
+                            System.out.println(i + " - " + t.getSerie() + " - " + t.getAnoLetivo());
+                        }
+                        int escolha = sc.nextInt();
+                        sc.nextLine();
+                        Turma turma = turmas.get(escolha);
+                        novoProfessor = cadastro.CadastroProfessor(escola, nome, dataNascimento, endereco, formacao, turma, telefone, dependentes);
+                        turma.setProfessor(novoProfessor);
+                        System.out.println("Professor vinculado a turma.");
+                    }
                     break;
                 case 2:
                     System.out.println("Cadastrando Turma.");
@@ -115,15 +128,34 @@ public class MenuCadastro {
                     String serie = sc.nextLine();
                     System.out.println("Digite o ano letivo: ");
                     String anoLetivo = sc.nextLine();
-                    System.out.println("Digite o professor: ");
-                    String professorTurma = sc.nextLine();
+
+                    Professor professorTurma = null;
+
+                    if(!escola.getProfessoresSemTurma().isEmpty()){
+                        System.out.println("Professores disponíveis:");
+                        List<Professor> disponiveis = escola.getProfessoresSemTurma();
+                        for(int i = 0; i < disponiveis.size(); i++){
+                            System.out.println(i + " - " + disponiveis.get(i).getNome());
+                        }
+                        int escolhaProf = sc.nextInt();
+                        sc.nextLine();
+                        professorTurma = disponiveis.get(escolhaProf);
+                        escola.getProfessoresSemTurma().remove(professorTurma);
+                    } else {
+                        System.out.println("Nenhum professor disponível");
+                    }
+
                     List<Aluno> alunos = new ArrayList<>();
+                    Turma novaTurma = cadastro.CadastroTurma(escola, serie, anoLetivo, professorTurma, alunos);
 
-
-                    cadastro.CadastroTurma(escola, serie, anoLetivo, professorTurma, alunos);
+                    if(professorTurma != null){
+                        professorTurma.setTurma(novaTurma);
+                        novaTurma.setProfessor(professorTurma);
+                    }
                     break;
+
                 case 3:
-                    System.out.println("Ninguém Cadastrado.");
+                    System.out.println("Sair.");
                     break;
             }
 

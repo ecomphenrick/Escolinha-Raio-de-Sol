@@ -8,7 +8,7 @@ public class Professor extends Pessoa {
     private Turma turma;
     private List<Aluno> dependente;
 
-    // Construtor
+    // Construtor da classe, (Ver como atualizar turma e como colocar os dependentes)
     public Professor(String nome, String dataNascimento, Endereco endereco, String formacao, Turma turma, String telefone, List<Aluno> dependente){
         super(nome, dataNascimento, endereco);
         this.formacao = formacao;

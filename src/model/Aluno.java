@@ -8,7 +8,7 @@ public class Aluno extends Pessoa {
     private Responsavel responsavel;
     private Turma turma;
 
-    // Construtor
+    // Construtor da classe Aluno (Ver como implementar a atualização das turmas e os boletins.)
     public Aluno(String nome, String dataNascimento, Endereco endereco, String naturalidade, Responsavel responsavel, Turma turma) {
         super(nome, dataNascimento, endereco);
         this.naturalidade = naturalidade;
@@ -16,6 +16,7 @@ public class Aluno extends Pessoa {
         this.turma = turma;
     }
 
+    //Getters e Setters dos atributos
     public String getNaturalidade() {
         return naturalidade;
     }

@@ -5,10 +5,10 @@ import java.util.List;
 public class Turma {
     private String serie;
     private String anoLetivo;
-    private String professor;
+    private Professor professor;
     private List<Aluno> alunos;
-
-    public Turma (String serie, String anoLetivo, String professor, List<Aluno> alunos){
+    //Construtor da classe, (Professor está como String, ver como ligar)
+    public Turma (String serie, String anoLetivo, Professor professor, List<Aluno> alunos){
         this.serie = serie;
         this.anoLetivo = anoLetivo;
         this.professor = professor;
@@ -32,11 +32,11 @@ public class Turma {
     }
 
 
-    public String getProfessor() {
+    public Professor getProfessor() {
         return professor;
     }
 
-    public void setProfessor(String professor) {
+    public void setProfessor(Professor professor) {
         this.professor = professor;
     }
 

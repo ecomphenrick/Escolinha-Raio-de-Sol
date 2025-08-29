@@ -7,6 +7,19 @@ public class Escola {
     private List<Turma> turmas;
     private List<Professor> professores;
     private List<Aluno> alunos;
+    private List<Professor> professoresSemTurma = new ArrayList<>();
+
+    public List<Professor> getProfessoresSemTurma() {
+        return professoresSemTurma;
+    }
+
+    public void setProfessoresSemTurma(List<Professor> professoresSemTurma) {
+        this.professoresSemTurma = professoresSemTurma;
+    }
+
+    public void adicionarProfessorSemTurma(Professor professor) {
+        this.professoresSemTurma.add(professor);
+    }
 
     public List<Aluno> getAlunos() {
         return alunos;

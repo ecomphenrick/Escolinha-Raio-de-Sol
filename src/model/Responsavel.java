@@ -7,13 +7,14 @@ public class Responsavel extends Pessoa {
     private String telefone;
     private List<Aluno> dependentes;
 
+    //Construtor da classe responsável. (Ver se dependentes está funcioanndo corretamente)
     public Responsavel (String nome, String dataNascimento, Endereco endereco, String telefone, List<Aluno> dependentes){
         super(nome, dataNascimento, endereco);
         this.telefone = telefone;
         this.dependentes = dependentes;
 
     }
-
+    //Getters e Setters
     public List<Aluno> getDependentes() {
         return dependentes;
     }

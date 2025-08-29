@@ -5,12 +5,15 @@ public class Pessoa {
     protected String dataNascimento;
     protected Endereco endereco;
 
+    //Atributos protect para as subclasses acessarem
+    //Contrutor da classe Pessoa.
     public Pessoa (String nome, String dataNascimento, Endereco endereco){
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.endereco = endereco;
     }
 
+    //Getters e Setters
     public String getDataNascimento() {
         return dataNascimento;
     }
