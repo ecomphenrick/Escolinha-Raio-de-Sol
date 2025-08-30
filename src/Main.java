@@ -28,7 +28,7 @@ public class Main {
                     break;
                 case 1:
                     MenuBusca menuBusca = new MenuBusca();
-                    //menuBusca chamada;
+                    menuBusca.ExibirMenu(escola);
                     break;
                 case 2:
                     //Ver como implementar
