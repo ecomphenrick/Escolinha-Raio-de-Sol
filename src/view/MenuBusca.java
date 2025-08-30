@@ -30,16 +30,31 @@ public class MenuBusca {
                     if(escola.getTurmas()==null || escola.getTurmas().isEmpty()){
                         System.out.println("Não existem turmas cadastradas.");
                     }else{
+                        System.out.println("0 - Ler");
+                        System.out.println("1 - Atualizar");
+                        System.out.println("2 - Deletar");
+                        System.out.println("3 - Sair");
+                        int acaoTurma = sc.nextInt();
+                        sc.nextLine();
+                        System.out.println("Em qual turma? ");
                         for (int i = 0; i < turmas.size(); i++) {
-                        Turma t = turmas.get(i);
-                        System.out.println(i + ": " + t.getSerie() + " - " + t.getAnoLetivo());}
+                            Turma t = turmas.get(i);
+                            System.out.println(i + ": " + t.getSerie() + " - " + t.getAnoLetivo());}
                         System.out.println("Escolha a turma: ");
                         int escolhaTurma = sc.nextInt();
                         sc.nextLine();
                         Turma turmaEscolhida = turmas.get(escolhaTurma);
-                        MenuRUD menuRUD = new MenuRUD();
-                        menuRUD.ExibirMenuTurma(turmaEscolhida);
-                        //Turma Escolhida, mostrar opções CRUD.
+                        switch (acaoTurma){
+                            case 0:
+                                MenuRUD menuRUD = new MenuRUD();
+                                menuRUD.ExibirLer(escola, turmaEscolhida);
+                                break;
+                            case 1:
+                                //implementar atualizar;
+                                break;
+                            case 2:
+                                escola.getTurmas().remove(turmaEscolhida);
+                        }
                     }
 
                     break;
