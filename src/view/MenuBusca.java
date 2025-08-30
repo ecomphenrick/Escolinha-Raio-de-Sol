@@ -21,7 +21,12 @@ public class MenuBusca {
             sc.nextLine();
             switch (acao) {
                 case 0:
-                    //Ver como buscar aluno, talvez por nome??
+                    if(escola.getAlunos()==null || escola.getAlunos().isEmpty()){
+                        System.out.println("Não há alunos cadastrados.");
+                    }else{
+                        MenuBuscaAluno menuBuscaAluno = new MenuBuscaAluno();
+                        menuBuscaAluno.ExibirMenuAluno(escola);
+                    }
                     break;
                 case 1:
                     //Ver como implementar.
@@ -30,33 +35,9 @@ public class MenuBusca {
                     if(escola.getTurmas()==null || escola.getTurmas().isEmpty()){
                         System.out.println("Não existem turmas cadastradas.");
                     }else{
-                        System.out.println("0 - Ler");
-                        System.out.println("1 - Atualizar");
-                        System.out.println("2 - Deletar");
-                        System.out.println("3 - Sair");
-                        int acaoTurma = sc.nextInt();
-                        sc.nextLine();
-                        System.out.println("Em qual turma? ");
-                        for (int i = 0; i < turmas.size(); i++) {
-                            Turma t = turmas.get(i);
-                            System.out.println(i + ": " + t.getSerie() + " - " + t.getAnoLetivo());}
-                        System.out.println("Escolha a turma: ");
-                        int escolhaTurma = sc.nextInt();
-                        sc.nextLine();
-                        Turma turmaEscolhida = turmas.get(escolhaTurma);
-                        switch (acaoTurma){
-                            case 0:
-                                MenuRUD menuRUD = new MenuRUD();
-                                menuRUD.ExibirLer(escola, turmaEscolhida);
-                                break;
-                            case 1:
-                                //implementar atualizar;
-                                break;
-                            case 2:
-                                escola.getTurmas().remove(turmaEscolhida);
-                        }
+                        MenuBuscaTurma menuBuscaTurma = new MenuBuscaTurma();
+                        menuBuscaTurma.ExibirMenuTurma(escola);
                     }
-
                     break;
                 case 3:
                     System.out.println("Saindo");
@@ -67,7 +48,6 @@ public class MenuBusca {
 
             }
         } while (acao != 3);
-
-
     }
 }
+
