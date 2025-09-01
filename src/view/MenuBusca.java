@@ -9,9 +9,9 @@ import java.util.Scanner;
 public class MenuBusca {
     Scanner sc = new Scanner(System.in);
     public void ExibirMenu(Escola escola) {
-        List<Turma> turmas = escola.getTurmas();
         int acao;
         do {
+            System.out.println("Busca\n");
             System.out.println("Você deseja buscar: ");
             System.out.println("0 - Aluno");
             System.out.println("1 - Professor");
@@ -28,8 +28,14 @@ public class MenuBusca {
                         menuBuscaAluno.ExibirMenuAluno(escola);
                     }
                     break;
+
                 case 1:
-                    //Ver como implementar.
+                    if(escola.getProfessoresGeral()==null|| escola.getProfessoresGeral().isEmpty()){
+                        System.out.println("Não há professores cadastrados. ");
+                    }else{
+                        MenuBuscaProfessor menuBuscaProfessor = new MenuBuscaProfessor();
+                        menuBuscaProfessor.ExibirMenuProfessor(escola);
+                    }
                     break;
                 case 2:
                     if(escola.getTurmas()==null || escola.getTurmas().isEmpty()){

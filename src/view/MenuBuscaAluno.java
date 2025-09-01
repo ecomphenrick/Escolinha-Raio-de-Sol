@@ -30,19 +30,22 @@ public class MenuBuscaAluno {
             System.out.println("Não há aluno com esse nome aqui.");
         }else {
             switch (acao){
-                case 1:
+                case 0:
                     System.out.println("Nome: " + buscado.getNome());
                     System.out.println("Data de Nascimento: " + buscado.getDataNascimento());
-                    System.out.println("Endereço: " + buscado.getEndereco());
+                    System.out.println("Endereço: " + buscado.getEndereco().toString());
                     System.out.println("Naturalidade: " + buscado.getNaturalidade());
-                    System.out.println("Responsável: " + buscado.getResponsavel());
-                    System.out.println("Turma: " + buscado.getTurma());
+                    System.out.println("Responsável: " + buscado.getResponsavel().getNome());
+                    System.out.println("Turma: " + buscado.getTurma().getSerie() + " - " + buscado.getTurma().getAnoLetivo());
                     break;
-                case 2:
+                case 1:
                     //Ver como implementar
                     break;
-                case 3:
+                case 2:
                     escola.getAlunos().remove(buscado);
+                    break;
+                case 3:
+                    System.out.println("Saindo...");
                     break;
             }
 

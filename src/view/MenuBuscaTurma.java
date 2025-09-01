@@ -43,7 +43,9 @@ public class MenuBuscaTurma {
             case 2:
                 escola.getTurmas().remove(turmaEscolhida);
                 break;
-
+            case 3:
+                System.out.println("Saindo... ");
+                break;
         }
     }
 }
