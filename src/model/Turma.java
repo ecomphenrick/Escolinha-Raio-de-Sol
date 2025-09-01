@@ -3,12 +3,12 @@ package model;
 import java.util.List;
 
 public class Turma {
-    private String serie;
-    private String anoLetivo;
+    private int serie;
+    private int anoLetivo;
     private Professor professor;
     private List<Aluno> alunos;
     //Construtor da classe
-    public Turma (String serie, String anoLetivo, Professor professor, List<Aluno> alunos){
+    public Turma (int serie, int anoLetivo, Professor professor, List<Aluno> alunos){
         this.serie = serie;
         this.anoLetivo = anoLetivo;
         this.professor = professor;
@@ -16,22 +16,14 @@ public class Turma {
     }
     //Getters e Setters
 
-    public List<Aluno> getAlunos() {
-        return alunos;
-    }
 
-    public void setAlunos(List<Aluno> alunos) {
-        this.alunos = alunos;
-    }
-
-    public String getAnoLetivo() {
+    public int getAnoLetivo() {
         return anoLetivo;
     }
 
-    public void setAnoLetivo(String anoLetivo) {
+    public void setAnoLetivo(int anoLetivo) {
         this.anoLetivo = anoLetivo;
     }
-
 
     public Professor getProfessor() {
         return professor;
@@ -41,12 +33,20 @@ public class Turma {
         this.professor = professor;
     }
 
-    public String getSerie() {
+    public int getSerie() {
         return serie;
     }
 
-    public void setSerie(String serie) {
+    public void setSerie(int serie) {
         this.serie = serie;
+    }
+
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
     }
 }
 

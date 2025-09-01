@@ -1,3 +1,4 @@
+import controller.AtualizaAno;
 import model.Escola;
 import view.MenuBusca;
 import view.MenuCadastro;
@@ -8,10 +9,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Escola escola = new Escola();
-        System.out.println("Bem vindos a Escola Raio de Sol!");
         int acao = -1;
 
         do {
+            System.out.println("Bem vindos a Escola Raio de Sol!");
             System.out.println("0 - Cadastro");
             System.out.println("1 - Busca");
             System.out.println("2 - Atualizar Ano"); //Ver como implementar.
@@ -35,7 +36,8 @@ public class Main {
                     menuBusca.ExibirMenu(escola);
                     break;
                 case 2:
-                    //Ver como implementar
+                    AtualizaAno atualizaAno = new AtualizaAno();
+                    atualizaAno.atualizarAno(escola);
                     break;
                 case 3:
                     System.out.println("Saindo...");

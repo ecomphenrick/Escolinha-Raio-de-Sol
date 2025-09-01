@@ -22,7 +22,7 @@ public class Cadastro {
     }
 
     //Método para criação da turma.
-    public Turma CadastroTurma(Escola escola, String serie, String anoLetivo, Professor professor, List<Aluno> alunos) {
+    public Turma CadastroTurma(Escola escola, int serie, int anoLetivo, Professor professor, List<Aluno> alunos) {
         Turma turmaCriada = new Turma(serie, anoLetivo, professor, alunos); //Criação do novo aluno
 
         escola.getTurmas().add(turmaCriada); //Adicionando turma na escola

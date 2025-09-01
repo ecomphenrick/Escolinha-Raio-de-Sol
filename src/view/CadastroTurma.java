@@ -16,9 +16,11 @@ public class CadastroTurma {
         Cadastro cadastro = new Cadastro();
         System.out.println("Cadastrando Turma.");
         System.out.println("Digite a série: ");
-        String serie = sc.nextLine();
+        int serie = sc.nextInt();
+        sc.nextLine();
         System.out.println("Digite o ano letivo: ");
-        String anoLetivo = sc.nextLine();
+        int anoLetivo = sc.nextInt();
+        sc.nextLine();
 
         Professor professorTurma = null;
 
