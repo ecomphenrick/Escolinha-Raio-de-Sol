@@ -1,5 +1,6 @@
 package view;
 
+import controller.AtualizarProfessor;
 import model.Aluno;
 import model.Escola;
 import model.Professor;
@@ -40,7 +41,8 @@ public class MenuBuscaProfessor {
                     System.out.println("Turma: " + buscado.getTurma().getSerie() + " - " + buscado.getTurma().getAnoLetivo());
                     break;
                 case 1:
-                    //Ver como implementar
+                    AtualizarProfessor atualizarProfessor = new AtualizarProfessor();
+                    atualizarProfessor.AtualizarProfessor(escola, buscado);
                     break;
                 case 2:
                     escola.getProfessoresGeral().remove(buscado);

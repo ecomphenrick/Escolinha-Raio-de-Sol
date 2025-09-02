@@ -16,7 +16,7 @@ public class AtualizaAno {
             int novaSerie = turmaAntiga.getSerie() + 1;
             int novoAnoLetivo = turmaAntiga.getAnoLetivo() + 1;
             
-            if (novaSerie <= 9) {
+            if (novaSerie <= 5) {
                 List<Aluno> mesmosAlunos = turmaAntiga.getAlunos();
 
                 Turma novaTurma = new Turma(
@@ -29,7 +29,7 @@ public class AtualizaAno {
 
                 novasTurmas.add(novaTurma);
             } else {
-                System.out.println("Turma do 9º ano " + turmaAntiga.getAnoLetivo() + " se formou!");
+                System.out.println("Turma do 5º ano " + turmaAntiga.getAnoLetivo() + " se formou!");
             }
         }
 
